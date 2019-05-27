@@ -1,4 +1,4 @@
-(ns tennis
+(ns packt-clj.tennis
   (:require
    [clojure.data.csv :as csv]
    [clojure.java.io :as io]
@@ -105,3 +105,4 @@
        :total-victories-player-2 (count player-2-victories)
        :most-competitive-matches (->> rivalry-seq
                                       (filter #(= 1 (- (:winner_sets_won %) (:loser_sets_won %)))))})))
+
