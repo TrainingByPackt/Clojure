@@ -55,11 +55,8 @@
 
 (defn historic
   [file-path]
-  (->> file-path
-       (io/file)
-       slurp
+  (->> (io/reader file-path)
        (csv/read-csv)
-       ;(take 4)
        sc/mappify
        (reduce (fn
                  [{:keys [player-ids-seen] :as acc} row]

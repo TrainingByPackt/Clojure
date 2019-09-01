@@ -24,5 +24,5 @@
   player_id varchar(4) REFERENCES player(id) ON DELETE CASCADE,
   rating DECIMAL(6,2))")
 
-(defn load [db]
+(defn load []
   (jdbc/db-do-commands db [create-player-ddl create-tennis-match-ddl create-elo-ddl]))
