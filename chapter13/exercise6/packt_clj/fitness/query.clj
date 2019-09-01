@@ -4,6 +4,7 @@
     [java-time :as t]
     [medley.core :as medley]))
 
+
 (defn all-users
   [db]
   (jdbc/query db ["select * from app_user"]))

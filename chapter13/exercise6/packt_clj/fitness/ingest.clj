@@ -9,6 +9,3 @@
 (defn activity
   [db activity]
   (first (jdbc/insert! db :activity activity)))
-
-
-
