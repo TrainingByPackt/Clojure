@@ -24,7 +24,7 @@
     :current-points 89
     :remaining-lives 4
     :experience-level 5
-    :status :impriosoned}
+    :status :imprisoned}
    {:id 1032
     :username "wandering"
     :current-points 2043
