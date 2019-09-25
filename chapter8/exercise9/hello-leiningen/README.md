@@ -1,6 +1,6 @@
 # hello-leiningen
 
-An example of a Clojure application packaged as an uberjar.
+An example of a Clojure application using an external library defined in project.clj file.
 
 
 ## Usage

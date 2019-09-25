@@ -1,7 +1,11 @@
 (use '[clojure.string :only (capitalize)])
 
-(capitalize "name")
+(def users #{"paul" "john" "katie"})
+
+(map #(capitalize %) users)
 
 (use '[clojure.set :exclude (join)])
 
-(subset? #{1 2} #{1 2 3})
+(def admins #{"paul" "katie" "mike" "tracy"})
+
+(subset?  users admins)

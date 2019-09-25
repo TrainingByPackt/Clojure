@@ -1,8 +1,8 @@
 (ns hello-leiningen.core
-
+  (:require [java-time :as time])
   (:gen-class))
 
 (defn -main
-  "Running app with profiles"
+  "Display current local time"
   [& args]
-  (println "Using profiles"))
+  (println (time/local-time)))

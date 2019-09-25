@@ -1,8 +1,10 @@
 # hello-leiningen
 
-An example of a Clojure application with Leiningen profiles.
+An example of a Clojure application packaged as an uberjar.
 
 
 ## Usage
 
-    $ lein with-profile dev test
+    $ lein uberjar
+
+    $ java -jar target/uberjar/hello-leiningen-0.1.0-SNAPSHOT-standalone.jar
