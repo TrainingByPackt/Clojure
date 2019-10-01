@@ -1,4 +1,4 @@
-(ns packt-clojure.htmlgen
+(ns packt-clj.htmlgen
   (:require [clojure.string :as string]))
 
 (defn attributes [m]
