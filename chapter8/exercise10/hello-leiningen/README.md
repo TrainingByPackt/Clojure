@@ -1,10 +1,9 @@
 # hello-leiningen
 
-An example of a Clojure application packaged as an uberjar.
+An example of a Clojure application run from command line with arguments.
 
 
 ## Usage
 
-    $ lein uberjar
 
-    $ java -jar target/uberjar/hello-leiningen-0.1.0-SNAPSHOT-standalone.jar
+    $ lein run banana apple

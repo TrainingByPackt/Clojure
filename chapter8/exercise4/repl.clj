@@ -11,17 +11,3 @@
 fruits
 
 garden/fruits
-
-(in-ns 'market)
-
-(clojure.core/refer 'garden :exclude '(vegetables))
-
-fruits
-
-vegetables
-
-garden/vegetables
-
-(in-ns 'shops)
-
-(clojure.core/refer 'garden :rename '{vegetables Gemuse})

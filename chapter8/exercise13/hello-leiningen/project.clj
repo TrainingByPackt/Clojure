@@ -6,4 +6,5 @@
   :dependencies [[org.clojure/clojure "1.9.0"]]
   :main ^:skip-aot hello-leiningen.core
   :target-path "target/%s"
-  :profiles {:uberjar {:aot :all}})
+  :profiles {:uberjar {:aot :all}
+             :dev {:dependencies [[expectations "2.1.10"]]}})

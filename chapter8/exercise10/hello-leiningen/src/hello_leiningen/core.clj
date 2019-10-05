@@ -1,8 +1,10 @@
 (ns hello-leiningen.core
-  (:require [java-time :as time])
-  (:gen-class))
+  (:require [clojure.string :as str]))
 
 (defn -main
-  "Display current local time"
+  "I don't do a whole lot ... yet."
   [& args]
-  (println (time/local-time)))
+    (-> (str/join " " args)
+      (str/replace "melon" "banana")
+      (str/replace "apple" "orange")
+      println))

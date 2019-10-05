@@ -1,7 +1,8 @@
 (ns hello-leiningen.core
+
   (:gen-class))
 
 (defn -main
-  "I don't do a whole lot ... yet."
+  "Running app with profiles"
   [& args]
-  (println "Hello, World!"))
+  (println "Using profiles"))
