@@ -4,12 +4,12 @@
 
 (def fruits ["orange" "apple" "melon"])
 
-(in-ns 'market)
+(in-ns 'shops)
 
-(clojure.core/refer 'garden :exclude '(vegetables))
-
-fruits
+(clojure.core/refer 'garden :rename '{vegetables Gemuse})
 
 vegetables
 
-garden/vegetables
+fruits
+
+owoce
