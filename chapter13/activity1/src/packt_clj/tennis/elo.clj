@@ -45,4 +45,3 @@
   [db]
   (let [elo-ratings (calculate-all db)]
     (jdbc/insert-multi! db :elo elo-ratings)))
-

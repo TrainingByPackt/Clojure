@@ -1,5 +1,6 @@
 (ns packt-clj.tennis.query
-  (:require [clojure.java.jdbc :as jdbc]))
+  (:require
+    [clojure.java.jdbc :as jdbc]))
 
 (defn all-tennis-matches
   [db]
@@ -17,7 +18,6 @@
                                           (cond-> acc
                                                   (< max-rating rating) (assoc :max-rating rating
                                                                                :player-name full_name)))
-                                        {:max-rating Integer/MIN_VALUE
+                                        {:max-rating  Integer/MIN_VALUE
                                          :player-name nil}
                                         rs))}))
-

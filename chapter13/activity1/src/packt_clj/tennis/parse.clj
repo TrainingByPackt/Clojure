@@ -1,10 +1,9 @@
 (ns packt-clj.tennis.parse
-  (:require 
-    
+  (:require
     [clojure.data.csv :as csv]
-      [clojure.java.io :as io]
-      [clojure.string :as str]
-      [semantic-csv.core :as sc]))
+    [clojure.java.io :as io]
+    [clojure.string :as str]
+    [semantic-csv.core :as sc]))
 
 (def ^:private winning-player-accessors
   {:id        :winner_player_id
@@ -23,7 +22,6 @@
    :match_order      :match_order
    :winner_id        :winner_player_id
    :loser_id         :loser_player_id})
-
 
 (defn apply-accessors
   [row accessors]
@@ -51,16 +49,13 @@
    :losing-player  (extract-losing-player row)
    :match          (extract-match row)})
 
-
 (defn new-player?
   [seen candidate]
   (not (seen (:id candidate))))
 
 (defn historic
   [file-path]
-  (->> file-path
-       (io/file)
-       slurp
+  (->> (io/reader file-path)
        (csv/read-csv)
        sc/mappify
        (reduce (fn
@@ -75,4 +70,3 @@
                 :data            {:players []
                                   :matches []}})
        :data))
-

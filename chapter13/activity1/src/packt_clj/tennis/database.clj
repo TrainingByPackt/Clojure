@@ -26,6 +26,3 @@
 
 (defn load []
   (jdbc/db-do-commands db [create-player-ddl create-tennis-match-ddl create-elo-ddl]))
-
-
-
