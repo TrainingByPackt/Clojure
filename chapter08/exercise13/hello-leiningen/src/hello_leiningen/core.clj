@@ -1,5 +1,4 @@
 (ns hello-leiningen.core
-
   (:gen-class))
 
 (defn -main
