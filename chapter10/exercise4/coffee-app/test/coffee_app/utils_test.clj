@@ -4,7 +4,6 @@
       [clojure.test.check.generators :as gen]
       [clojure.test.check.properties :as prop]
       [clojure.test.check.clojure-test :refer [defspec]]
-      [clojure.spec.alpha :as s]
       [coffee-app.core :refer [price-menu]]
       [coffee-app.utils :refer :all]))
 
