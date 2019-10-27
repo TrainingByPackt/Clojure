@@ -1,6 +1,6 @@
 # coffee-app
 
-Coffee ordering app with examples using property-based testing with test.check library. 
+Coffee ordering app with examples using property-based testing with test.check library.
 
 ## Usage
 

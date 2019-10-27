@@ -1,6 +1,6 @@
 # coffee-app
 
-Coffee ordering app with a test suite. 
+Coffee ordering app with a test suite.
 
 ## Usage
 
