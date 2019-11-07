@@ -57,7 +57,8 @@
         computer (:computer-choice (rum/react app-state))
         result (resolve-game player computer)]
     [:div
-     [:div "You played " (name player) " and the computer chose " (name computer)]
+     [:div "You played " [:strong (name player)]]
+     [:div "The computer played " [:strong (name computer)]]
      (if (= result :tie)
        [:div "It was a tie!"]
        [:div
