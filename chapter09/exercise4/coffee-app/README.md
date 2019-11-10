@@ -1,6 +1,6 @@
 # coffee-app
 
-Coffee ordering app. Command line application performing I/O (Input/Output) operations on files. 
+Coffee ordering app. Command line application performing input operations using Scanner class.
 
 ## Usage
 

@@ -13,6 +13,7 @@
        (println "How many coffees do you want to buy?")
        (let [choice (.nextInt input)
              price (utils/calculate-coffee-price price-menu type choice)]
+            (utils/save-coffee-order orders-file type choice price)
             (utils/display-bought-coffee-message type choice price)))
 
 (defn show-menu []
@@ -25,7 +26,8 @@
 
 (defn show-orders []
        (println "\n")
-       (println "Display orders here"))
+       (doseq [order (utils/load-orders orders-file)]
+              (println (utils/display-order order))))
 
 (defn start-app []
        "Displaying main menu and processing user choices."
@@ -37,7 +39,7 @@
                         (case choice
                               1 (show-menu)
                               2 (show-orders)
-                              3 (dosync (ref-set run-application false)))))))
+                              3 (dosync (alter run-application (fn [_] false))))))))
 
 (defn -main
       "Main function calling app."
