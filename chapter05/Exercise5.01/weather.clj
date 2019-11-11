@@ -19,3 +19,18 @@
     :min 19
     :description :sunny
     :date "2019-09-28"}])
+
+;;; In REPL: find day with maximum temperature
+(reduce (fn [max-day-so-far this-day]
+          (if (> (:max this-day) (:max max-day-so-far))
+            this-day
+            max-day-so-far))
+        weather-days)
+
+;;; In REPL: find day with lowest maximum temperature
+(reduce (fn [min-max-day-so-far this-day]
+          (if (< (:max this-day) (:max min-max-day-so-far))
+            this-day
+            min-max-day-so-far))
+        weather-days)
+
