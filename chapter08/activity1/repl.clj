@@ -2,6 +2,10 @@
 
 (def users #{"mr_paul smith" "dr_john blake" "miss_katie hudson"})
 
+(map #(str-replace % #"_" " ") users)
+
+(map #(capitalize %) users)
+
 (def updated-users (into #{}
                          (map #(join " "
                                      (map (fn [sub-str] (capitalize sub-str))
