@@ -8,7 +8,7 @@
 (defn save-to [location data]
       (spit location data :append true))
 
-(defn file-exists [location]
+(defn file-exists? [location]
       (.exists (io/as-file location)))
 
 (defn read-one-order
@@ -23,7 +23,7 @@
 (defn load-orders
       "Reads a sequence of orders in file at path."
       [file]
-      (if (file-exists file)
+      (if (file-exists? file)
         (with-open [r (PushbackReader. (io/reader file))]
                    (binding [*read-eval* false]
                             (doall (take-while #(not= ::EOF %) (repeatedly #(read-one-order r))))))

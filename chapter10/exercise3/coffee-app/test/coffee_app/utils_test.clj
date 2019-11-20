@@ -1,7 +1,7 @@
 (ns coffee-app.utils-test
     (:require [coffee-app.core :refer [price-menu]]
               [coffee-app.utils :refer :all]
-              [midje.sweet :refer :all]))
+              [midje.sweet :refer [=> fact provided unfinished]]))
 
 (fact (calculate-coffee-price price-menu :latte 3) => 1.5)
 

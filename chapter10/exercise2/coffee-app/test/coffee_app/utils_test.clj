@@ -1,7 +1,7 @@
 (ns coffee-app.utils-test
     (:require [coffee-app.core :refer [price-menu]]
       [coffee-app.utils :refer :all]
-      [expectations :refer :all]))
+      [expectations :refer [expect in]]))
 
 (expect 1.5 (calculate-coffee-price price-menu :latte 3))
 

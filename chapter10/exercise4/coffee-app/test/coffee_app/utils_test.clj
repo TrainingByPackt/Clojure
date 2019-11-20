@@ -1,5 +1,5 @@
 (ns coffee-app.utils-test
-    (:require [clojure.test :refer :all]
+    (:require
       [clojure.test.check.generators :as gen]
       [clojure.test.check.properties :as prop]
       [clojure.test.check.clojure-test :refer [defspec]]

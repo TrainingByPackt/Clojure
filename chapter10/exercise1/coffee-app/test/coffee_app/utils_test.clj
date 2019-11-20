@@ -1,5 +1,5 @@
 (ns coffee-app.utils-test
-    (:require [clojure.test :refer :all]
+    (:require [clojure.test :refer [are is deftest testing]]
               [coffee-app.core :refer [price-menu]]
               [coffee-app.utils :refer :all]))
 
