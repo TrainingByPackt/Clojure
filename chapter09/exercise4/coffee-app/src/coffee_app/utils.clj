@@ -8,8 +8,5 @@
         (* number)
         float))
 
-(defn display-order [order]
-      (str "Bought " (:number order) " cups of " (name (:type order)) " for €" (:price order)))
-
 (defn display-bought-coffee-message [type number total]
       (println "Buying" number (name type) "coffees for total:€" total))

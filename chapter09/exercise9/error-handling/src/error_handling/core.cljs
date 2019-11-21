@@ -1,13 +1,14 @@
-(ns error-handling.core)
+(ns error-handling.core
+  (:require [clojure.browser.repl :as repl]))
 
 (def languages {:Clojure "CLJ"
                 :ClojureScript "CLJS"
                 :JavaScript "JS"})
 
 (defn language-abbreviator [language]
-  (if-let [lang (get languages language)]
-          lang
-          (throw (js/Error. "Language not supported"))))
+      (if-let [lang (get languages language)]
+              lang
+              (throw (js/Error. "Language not supported"))))
 
 (language-abbreviator :JavaScript)
 

@@ -1,10 +1,26 @@
 # error-handling
 
-Examples of error handling in ClojureScript.
+Project showing error handling in ClojureSript.
 
+## Setup
 
-# Running
+Most of the following scripts require [rlwrap](http://utopia.knoware.nl/~hlub/uck/rlwrap/) (on OS X installable via brew).
 
-In order to run the examples in REPL start it:
+Build your project once in dev mode with the following script and then open `index.html` in your browser.
 
-    clj --main cljs.main --compile error-handling.core --repl
+    ./scripts/build
+
+To auto build your project in dev mode:
+
+    ./scripts/watch
+
+To start an auto-building Node REPL:
+
+    ./scripts/repl
+    
+For more info using the browser as a REPL environment, see
+[this](https://github.com/clojure/clojurescript/wiki/The-REPL-and-Evaluation-Environments#browser-as-evaluation-environment).
+    
+Clean project specific out:
+
+    lein clean
