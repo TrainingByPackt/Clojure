@@ -1,4 +1,4 @@
-(ns packt-clj.htmlgen
+(ns packt-clj.htmlgen-two
   (:require [clojure.string :as string]))
 
 (defn attributes [m]
@@ -49,3 +49,47 @@
           (->opening-tag tagname (when attrs? (first content)))
           (apply str content-items)
           (->end-tag tagname))))))
+
+(defmacro define-html-tags [& tags]
+  `(do
+     ~@(map (fn [tagname]
+              `(def ~(symbol tagname) (tag-fn ~tagname)))
+            tags)))
+
+
+(define-html-tags "h1" "h2" "h3" "h4" "h5" "p" "div" "span")
+
+
+;;; --------------------------------------------------------------;;;
+;;; End of the code from Exercise 11.02. What follows is the
+;;; Exercise 11.03 code
+;;; --------------------------------------------------------------;;;
+
+
+(defn subtag-fn [tagname subtag]
+  (fn subtag-function-builder
+    ([content]
+     (subtag-function-builder nil content))
+    ([attrs content]
+       (str
+         (->opening-tag tagname attrs)
+         (apply str (map subtag content))
+         (->end-tag tagname)))))
+
+
+(defmacro define-html-list-tags [& tags-with-subtags]
+  `(do
+     ~@(map (fn [[tagname subtag]]
+              `(do
+                 (def ~(symbol tagname) (tag-fn ~tagname))
+                 (def ~(symbol (str tagname "->" subtag)) (subtag-fn ~tagname ~(symbol subtag)))))
+            tags-with-subtags)))
+
+
+
+(defmacro define-html-list-tags-with-mapcat [& tags-with-subtags]
+  `(do
+     ~@(mapcat (fn [[tagname subtag]]
+                 [`(def ~(symbol tagname) (tag-fn ~tagname))
+                  `(def ~(symbol (str tagname "->" subtag)) (subtag-fn ~tagname ~(symbol subtag)))])
+               tags-with-subtags)))
