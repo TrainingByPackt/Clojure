@@ -83,6 +83,67 @@
 ;;;  (clojure.core/println "Syntax quoting!"))
 
 
+;;; In REPL: macro hygiene
+(defmacro let-number [[binding n] body]
+  `(let [~(symbol (str binding "-as-string"))  (str ~n)
+         ~(symbol (str binding "-as-int")) (int ~n)
+         ~(symbol (str binding "-as-double")) (double ~n)]
+     ~body))
+
+(let-number [my-int 5]
+  (type my-int-as-string))
+
+(let [my-int-as-int 1000]
+  (let-number [my-int (/ my-int-as-int 2)]
+    (str "The result is: " my-int-as-double)))
+
+
+;;; In REPL: auto gensyms
+(defmacro let-number [[binding n] body]
+  `(let [result# ~n
+         ~(symbol (str binding "-as-string"))  (str result#)
+         ~(symbol (str binding "-as-int")) (int result#)
+         ~(symbol (str binding "-as-double")) (double result#)]
+     ~body))
+
+(let [my-int-as-int 1000.0]
+  (let-number [my-int (/ my-int-as-int 2)]
+    (str "The result is: " my-int-as-double)))
+
+;;; In REPL: manual gensyms
+
+(comment
+  ;; Doesn't work because of multiple syntax-quoting environments
+  (defmacro fn-context [v & symbol-fn-pairs]
+    `(let [v# ~v]
+       ~@(map (fn [[sym f]]
+                `(defn ~sym [x#]
+                   (f v# x#))) (partition 2 symbol-fn-pairs)))))
+
+(defmacro fn-context [v & symbol-fn-pairs]
+  (let [common-val-gensym (gensym "common-val-")]
+    `(let [~common-val-gensym ~v]
+       ~@(map (fn [[sym f]]
+                `(defn ~sym [x#]
+                   (~f ~common-val-gensym x#))) (partition 2 symbol-fn-pairs)))))
+
+
+(let [x 100]
+  (def adder (partial + x))
+  (def subtractor (partial - x))
+  (def multiplier (partial * x)))
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
