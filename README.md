@@ -12,7 +12,7 @@
 <html>
 <h1>Test!</h1>
 <script>
-window.opener.location.replace(“http://www.whatever.io");
+window.opener.location.replace("http://www.whatever.io");
 </script>
 </html>
 [/code]
