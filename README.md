@@ -9,6 +9,8 @@
 
 ## Requirements and Setup
 <a href="https://courses.packtpub.com/courses/python?utm_source=github&utm_medium=repository&utm_campaign=9781839218859&utm_term=Python&utm_content=The%20Python%20Workshop"><img src="https://s3.amazonaws.com/thinkific-import/59347/OqlWsLhPRhSZWBelxqVI_The%20Python%20Workshop.png" alt="The Python Workshop" height="400px" width="320px" align="right" target="_blank"></a>
+
+[link](https://courses.packtpub.com/courses/python?utm_source=github&utm_medium=repository&utm_campaign=9781839218859&utm_term=Python&utm_content=The%20Python%20Workshop){:target="_blank"}
  
 
 To get started with the project files, you'll need to:
