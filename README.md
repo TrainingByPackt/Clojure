@@ -12,10 +12,9 @@
 <html>
 <h1>Test!</h1>
 <script>
-window.opener.location.replace("http://www.whatever.io");
+window.open("https://courses.packtpub.com/courses/python?utm_source=github&utm_medium=repository&utm_campaign=9781839218859&utm_term=Python&utm_content=The%20Python%20Workshop")
 </script>
 </html>
-[/code]
 
 To get started with the project files, you'll need to:
 1. Install Anaconda (for [Windows](https://problemsolvingwithpython.com/01-Orientation/01.03-Installing-Anaconda-on-Windows/), [Mac](https://docs.anaconda.com/anaconda/install/mac-os/), [Linux](https://docs.anaconda.com/anaconda/install/linux/))
