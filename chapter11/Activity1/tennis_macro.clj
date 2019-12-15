@@ -1,4 +1,4 @@
-(ns tennis-macro
+(ns packt-clj.tennis-macro
     (:require [clojure.java.io :as io]
               [clojure.data.csv :as csv]
               [semantic-csv.core :as sc]))
