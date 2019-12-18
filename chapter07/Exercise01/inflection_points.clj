@@ -39,12 +39,12 @@
 
             (local-max? current-series)
             (cons
-              (conj (second current-series) :max)
+              (conj (second current-series) :peak)
               (inflection-points (rest data)))
 
             (local-min? current-series)
             (cons
-              (conj (second current-series) :min)
+              (conj (second current-series) :valley)
               (inflection-points (rest data)))
 
             :otherwise
