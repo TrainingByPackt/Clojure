@@ -9,6 +9,7 @@
     [packt-clj.fitness.ingest :as ingest]
     [packt-clj.tennis.query :as query]
     [ring.adapter.jetty :refer [run-jetty]]
+    [jumblerg.middleware.cors :refer [wrap-cors]]
     [ring.middleware.params :as params]))
 
 (defroutes routes
@@ -50,6 +51,8 @@
   (run-jetty
     (-> routes
         middleware/wrap-format
-        params/wrap-params)
+        params/wrap-params
+        (wrap-cors ".*")  
+        (wrap-cors identity))
     {:port  8080
      :join? false}))
