@@ -7,13 +7,16 @@
 
 
 ;;; In REPL: 7. The complete function
-(defn average-potatoes [so-far arrivals]
+(defn average-potatoes [prev arrivals]
   (lazy-seq
     (if-not arrivals
-      so-far
-      (let [[_ n total] (first so-far)]
-        (average-potatoes
-          (cons
-            [(first arrivals) (inc (or n 0)) (+ (first arrivals) (or total 0))]
-            so-far)
-          (next arrivals))))))
+      '()
+      (let [[_ n total] prev
+            current [(first arrivals)
+                     (inc (or n 0))
+                     (+ (first arrivals) (or total 0))]]
+        (cons
+          current
+          (average-potatoes
+            current
+            (next arrivals)))))))
