@@ -32,7 +32,12 @@
    [:vienna :budapest 43]
    [:prague :budapest 91]])
 
-(def lookup (grouped-routes routes))
+
+
+(defn route-list->distance-map [route-list]
+ (->> route-list
+    (map (fn [[_ city cost]] [city cost]))
+    (into {})))
 
 (defn grouped-routes
   [routes]
@@ -43,6 +48,7 @@
        (map (fn [[k v]] [k (route-list->distance-map v)]))
        (into {})))
 
+(def lookup (grouped-routes routes))
 
 (defn find-path* [route-lookup destination path]
   (let [position (last path)]
