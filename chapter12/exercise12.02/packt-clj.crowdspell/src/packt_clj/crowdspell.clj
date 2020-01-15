@@ -12,4 +12,5 @@
                  [["-l" "--language LANG" "Two-letter language code for search"
                    :default "en"]])]
     (println (fetch/get-best-word (get-in parsed [:options :language])
-                                  (:arguments parsed)))))
+                                  (:arguments parsed)))
+    (System/exit)))
