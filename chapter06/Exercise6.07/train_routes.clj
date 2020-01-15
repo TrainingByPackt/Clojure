@@ -85,6 +85,6 @@
      routes))
 
 (defn find-path [route-lookup origin destination]
- (min-route (find-path* route-lookup destination [origin])))
+  (min-route route-lookup (find-path* route-lookup destination [origin])))
 
 
