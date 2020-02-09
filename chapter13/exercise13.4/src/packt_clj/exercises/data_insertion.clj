@@ -3,7 +3,7 @@
     [clojure.java.jdbc :as jdbc]))
 
 ; option 1
-(defn insert-user
+(defn insert-user-1
   [db]
   (jdbc/insert!
     db
@@ -14,7 +14,7 @@
      :weight     80}))
 
 ; option 2
-(defn insert-user
+(defn insert-user-2
   [db]
   (jdbc/insert!
     db
