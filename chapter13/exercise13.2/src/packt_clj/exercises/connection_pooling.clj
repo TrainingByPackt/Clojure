@@ -4,9 +4,9 @@
     [hikari-cp.core :as hikari]))
 
 ; option 1
-(def db {:datasource (hikari/make-datasource {:jdbc-url "jdbc:derby:derby-local;create=true"})})
+(def db-jdbc-url {:datasource (hikari/make-datasource {:jdbc-url "jdbc:derby:derby-local;create=true"})})
 
 ; option 2
-(def db {:datasource
-         (hikari/make-datasource {:database-name         "derby-local"
-                                  :datasource-class-name "org.apache.derby.jdbc.EmbeddedDataSource"})})
+(def db-datasource-class-name {:datasource
+                               (hikari/make-datasource {:database-name         "derby-local"
+                                                        :datasource-class-name "org.apache.derby.jdbc.EmbeddedDataSource"})})
