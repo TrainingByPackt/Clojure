@@ -3,8 +3,8 @@
     [clojure.java.jdbc :as jdbc]))
 
 (def create-app-user-ddl
-  "CREATE TABLE app_user (
-   id INT GENERATED ALWAYS AS IDENTITY CONSTRAINT USER_ID_PK PRIMARY KEY,
+  "CREATE TABLE app_user
+  (id INT GENERATED ALWAYS AS IDENTITY CONSTRAINT USER_ID_PK PRIMARY KEY,
    first_name VARCHAR(32),
    surname VARCHAR(32),
    height SMALLINT,
